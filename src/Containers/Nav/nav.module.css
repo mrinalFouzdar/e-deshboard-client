@@ -1,0 +1,23 @@
+
+.navContainer{
+    padding: 2px 20px;
+    background-color: aqua;
+}
+.navUlEle{
+    display: flex;
+
+}
+
+ul{
+    padding: 0%;
+    display: flex;
+    gap: 1vw;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    text-decoration: underline;
+}
