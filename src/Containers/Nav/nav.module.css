@@ -1,7 +1,7 @@
 
 .navContainer{
     padding: 2px 20px;
-    background-color: aqua;
+    background-color:lightcoral;
 }
 .navUlEle{
     display: flex;
@@ -14,10 +14,10 @@ ul{
     gap: 1vw;
     list-style-type: none;
 }
-a{
+/* a{
     text-decoration: none;
     color: black;
 }
 a:active{
     text-decoration: underline;
-}
+} */

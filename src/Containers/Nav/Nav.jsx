@@ -1,31 +1,40 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "./nav.module.css"
-const Nav = () => {
+import {Navbar,Container ,Nav} from "react-bootstrap"
+import { useEffect } from "react";
+import { useState } from "react";
+const Navbarcomponent = () => {
+  const auth = localStorage.getItem("user")
+  const [authstate,setAuthState]=useState(false)
+  useEffect(()=>{
+    setAuthState(auth)
+  },[auth])
+
   return (
-    <div className={styled.navContainer}>
-      <ul className={styled.navUlEle}>
-        <li>
-          <Link to="/">Products</Link>
-        </li>
-        <li>
-          <Link to="/add">Add Products</Link>
-        </li>
-        <li>
-          <Link to="/update">Update Products</Link>
-        </li>
-        <li>
-          <Link to="/logout">Logout</Link>
-        </li>
-        <li>
-          <Link to="/profile">Profile</Link>
-        </li>
-        <li>
-          <Link to="/SignUp">SignUp</Link>
-        </li>
-      </ul>
-    </div>
+    <Navbar expand="lg"  className={styled.navContainer}>
+      <Container>
+        <Navbar.Brand as={Link} to="/">
+          Desboard
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+
+        <Nav className="me-auto">
+          <Nav.Link as={Link} to="/">Products</Nav.Link>
+          <Nav.Link as={Link} to="/add">Add Product</Nav.Link>
+          <Nav.Link as={Link} to="/update">Update</Nav.Link>
+          <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+          {authstate ?
+          <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
+          :
+          <Nav.Link as={Link} to="/signUp">SignUp</Nav.Link>
+           }
+        </Nav>
+      </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Nav;
+export default Navbarcomponent;
