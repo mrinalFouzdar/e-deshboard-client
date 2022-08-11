@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './Containers/Footer/Footer';
+import Login from './Containers/Login/Login';
 import Nav from './Containers/Nav/Nav';
 import PrivateComponent from './Containers/PrivateComponent/PrivateComponent';
 import SignUp from './Containers/Signup/SignUp';
@@ -15,9 +16,11 @@ function App() {
       <Route path='/' element={"Home Page"}/>
       </Route>  
                          
-      <Route path='/SignUp' element={<SignUp/>}/>
+      <Route path='/signUp' element={<SignUp/>}/>
+      <Route path='/logIn' element={<Login/>}/>
       </Routes>
       <Footer/>
+      
     </div>
   );
 }

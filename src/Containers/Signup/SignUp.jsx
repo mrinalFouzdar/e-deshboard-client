@@ -4,7 +4,11 @@ import { Container,Row,Col, Card,Form, Button } from "react-bootstrap"
 import { FromHook } from "../../ConstomHooks/formHook/FromHook"
 // import styled from "./signup.module.css"
 const SignUp =()=>{
-    const {form,handleInputChange,handleSubmit,nevigatFun}=FromHook()
+    const {form,handleInputChange,handleSubmit,nevigatFun}=FromHook({
+        name:"",
+        email:"",
+        password:""
+    })
     useEffect(()=>{
         nevigatFun()
     },[nevigatFun])

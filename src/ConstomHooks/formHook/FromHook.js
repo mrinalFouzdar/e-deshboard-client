@@ -1,11 +1,8 @@
 import { useState } from "react"
 import {useNavigate} from "react-router-dom"
-export const FromHook=(onsubmit)=>{
-    const [formData,setFormData]=useState({
-        name:"",
-        email:"",
-        password:""
-    })
+// onsubmit
+export const FromHook=(Initial="")=>{
+    const [formData,setFormData]=useState(Initial)
     const  nevigate = useNavigate()
     const handleInputChange=(e)=>{
         let {name,value}=e.target;
