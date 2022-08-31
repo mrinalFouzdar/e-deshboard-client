@@ -5,6 +5,7 @@ import Login from './Containers/Login/Login';
 import Nav from './Containers/Nav/Nav';
 import PrivateComponent from './Containers/PrivateComponent/PrivateComponent';
 import SignUp from './Containers/Signup/SignUp';
+import AddProduct from './pages/AddProduct/AddProduct';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
       <Route element={<PrivateComponent/>}>
       <Route path='/' element={"Home Page"}/>
+      <Route path="/addProduct" element={<AddProduct/>}/>
       </Route>  
                          
       <Route path='/signUp' element={<SignUp/>}/>

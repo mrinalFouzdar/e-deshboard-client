@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { FromHook } from "../../ConstomHooks/formHook/FromHook";
 const Login = () => {
-    const {handleInputChange}=FromHook({
+    const {handleInputChange,handleSubmitLogin}=FromHook({
         email:"",
         password:""
     })
@@ -13,7 +13,7 @@ const Login = () => {
           <Card>
             <Card.Header>LogIn</Card.Header>
             <Card.Body>
-              <Form>
+              <Form onSubmit={handleSubmitLogin}>
                 <Form.Group className="mb-3" >
                   <Form.Control type="text" placeholder="Enter Email" name="email" onChange={handleInputChange}/>
                 </Form.Group>
